@@ -1,4 +1,6 @@
-# **REFLECTION
+<u>Laboratory 10: Enterprise Cloud</u>
+
+# REFLECTION
 
 Laboratory Activity 10 was very useful for our group in the application of the concepts and techniques that we acquired in the laboratory sessions of Cloud Computing. In this activity, we were able to collaborate on creating and setting up a multi-tier application with Ubuntu Server, Docker, Docker Compose, WordPress, and MySQL.
 
