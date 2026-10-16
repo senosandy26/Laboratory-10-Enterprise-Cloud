@@ -277,27 +277,19 @@ docker ps
 ```
 
 
-14. Maintenance
+## 14. Maintenance
 
 Regular maintenance includes:
 
-Checking Docker containers
-
-Checking application logs
-
-Checking database logs
-
-Checking disk usage
-
-Checking persistent volumes
-
-Checking firewall configuration
-
-Checking backup files
-
-Testing backup restoration
-
-Checking Cron configuration
+- Checking Docker containers
+- Checking application logs
+- Checking database logs
+- Checking disk usage
+- Checking persistent volumes
+- Checking firewall configuration
+- Checking backup files
+- Testing backup restoration
+- Checking Cron configuration
 
 ## 15. Recovery
 
