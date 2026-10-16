@@ -20,7 +20,6 @@ docker volume inspect lowdb_wordpress_data
 
 ---
 
-
 ## 8. Firewall Security
 
 **Reset UFW:**
@@ -65,4 +64,262 @@ sudo ufw --force enable
 sudo ufw status verbose
 ```
 
+---
 
+## 9. Automated Backup
+
+**Make the backup script executable:**
+
+```bash
+chmod +x automation-script.sh
+```
+
+**Run the backup script:**
+
+```bash
+./automation-script.sh
+```
+
+**View backup files:**
+
+```bash
+ls -lh backups/
+```
+
+**View backup log:**
+
+```bash
+cat backups/backup.log
+```
+
+---
+
+## 10. Cron
+
+**Open the Cron editor:**
+
+```bash
+crontab -e
+```
+
+**Schedule the backup to run daily at 2:00 AM:**
+
+```bash
+0 2 * * * /bin/bash /FULL/PATH/TO/automation-script.sh
+```
+
+Replace `/FULL/PATH/TO/automation-script.sh` with the actual absolute path to your script.
+
+**Verify the Cron job:**
+
+```bash
+crontab -l
+```
+
+**Check the system date and time:**
+
+```bash
+date
+```
+
+---
+
+## 11. Verification and Troubleshooting
+
+**Check Docker containers:**
+
+```bash
+docker ps -a
+```
+
+**Check Docker volumes:**
+
+```bash
+docker volume ls
+```
+
+**Check firewall status:**
+
+```bash
+sudo ufw status verbose
+```
+
+**Check Cron service:**
+
+```bash
+sudo systemctl status cron
+```
+
+**Check backup files:**
+
+```bash
+ls -lh backups/
+```
+
+**Check backup logs:**
+
+```bash
+cat backups/backup.log
+```
+
+**Check the script's syntax:**
+
+```bash
+bash -n automation-script.sh
+```
+
+**Display the current directory:**
+
+```bash
+pwd
+```
+
+**List project files:**
+
+```bash
+ls -la
+```
+
+## 12. Restart Procedure
+
+**Stop the application:**
+
+```bash
+docker compose down
+```
+
+**Start the application:**
+
+```bash
+docker compose up -d
+```
+
+**Verify the application:**
+
+```bash
+docker compose ps
+```
+
+---
+
+## 13. Troubleshooting
+
+### WordPress does not load
+
+**Run:**
+
+```bash
+docker compose ps
+```
+
+**Check the WordPress logs:**
+
+```bash
+docker logs $(docker compose ps -q wordpress)
+```
+
+### MySQL does not start
+
+**Check the MySQL logs:**
+
+```bash
+docker compose logs mysql
+```
+
+### Docker is stopped
+
+**Check Docker status:**
+
+```bash
+sudo systemctl status docker
+```
+
+**Start Docker:**
+
+```bash
+sudo systemctl start docker
+```
+
+### Firewall blocks the application
+
+**Check firewall status:**
+
+```bash
+sudo ufw status verbose
+```
+
+**Allow the web application port:**
+
+```bash
+sudo ufw allow 8080/tcp
+```
+
+### Backup fails
+
+**Check running containers:**
+
+```bash
+docker ps
+```
+
+**Check backup files:**
+
+```bash
+ls -lh backups/
+```
+
+**Check backup logs:**
+
+```bash
+cat backups/backup.log
+```
+
+---
+
+## 14. Maintenance Checklist
+
+- [ ] Check running containers.
+- [ ] Check Docker volume status.
+- [ ] Check backup files.
+- [ ] Test backup restoration.
+- [ ] Check Cron configuration.
+
+---
+
+## 15. Recovery
+
+**If the containers stop, restart the application:**
+
+```bash
+docker compose up -d
+```
+
+**If the server restarts, start Docker:**
+
+```bash
+sudo systemctl start docker
+```
+
+**Start the application again:**
+
+```bash
+docker compose up -d
+```
+
+**Verify the containers:**
+
+```bash
+docker compose ps
+```
+
+Persistent Docker volumes retain application and database data when containers are recreated, provided the volumes are not deleted and the application is configured to use them.
+
+---
+
+## 16. Conclusion
+
+The infrastructure demonstrates a multi-tier application deployed using Docker Compose on Ubuntu Server.
+
+It includes persistent storage, firewall security, automated database backup, scheduled operations, and technical documentation.
+
+These configurations help support application reliability, data protection, and easier system maintenance.
