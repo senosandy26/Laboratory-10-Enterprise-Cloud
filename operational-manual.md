@@ -206,7 +206,7 @@ docker compose ps
 docker compose ps
 ```
 
-**Check the WordPress logs:**
+**Then:**
 
 ```bash
 docker logs $(docker compose ps -q wordpress)
