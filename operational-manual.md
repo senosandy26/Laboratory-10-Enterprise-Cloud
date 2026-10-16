@@ -277,15 +277,27 @@ docker ps
 ```
 
 
-## 14. Maintenance Checklist
+14. Maintenance
 
-- [ ] Check running containers.
-- [ ] Check Docker volume status.
-- [ ] Check backup files.
-- [ ] Test backup restoration.
-- [ ] Check Cron configuration.
+Regular maintenance includes:
 
----
+Checking Docker containers
+
+Checking application logs
+
+Checking database logs
+
+Checking disk usage
+
+Checking persistent volumes
+
+Checking firewall configuration
+
+Checking backup files
+
+Testing backup restoration
+
+Checking Cron configuration
 
 ## 15. Recovery
 
