@@ -305,13 +305,7 @@ sudo systemctl start docker
 docker compose up -d
 ```
 
-**Verify the containers:**
-
-```bash
-docker compose ps
-```
-
-Persistent Docker volumes retain application and database data when containers are recreated, provided the volumes are not deleted and the application is configured to use them.
+Persistent Docker volumes retain application and database data.
 
 ---
 
