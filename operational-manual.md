@@ -240,15 +240,29 @@ sudo systemctl status docker
 sudo systemctl start docker
 ```
 
-### Firewall blocks the application
+### Docker is stopped
 
-**Check firewall status:**
+**Run:**
+
+```bash
+sudo systemctl status docker
+```
+
+**Start Docker:**
+
+```bash
+sudo systemctl start docker
+```
+
+### Firewall blocks application
+
+**Check:**
 
 ```bash
 sudo ufw status verbose
 ```
 
-**Allow the web application port:**
+**Allow application:**
 
 ```bash
 sudo ufw allow 8080/tcp
@@ -256,25 +270,12 @@ sudo ufw allow 8080/tcp
 
 ### Backup fails
 
-**Check running containers:**
+**Check:**
 
 ```bash
 docker ps
 ```
 
-**Check backup files:**
-
-```bash
-ls -lh backups/
-```
-
-**Check backup logs:**
-
-```bash
-cat backups/backup.log
-```
-
----
 
 ## 14. Maintenance Checklist
 
@@ -316,10 +317,12 @@ Persistent Docker volumes retain application and database data when containers a
 
 ---
 
+
+
 ## 16. Conclusion
 
-The infrastructure demonstrates a multi-tier application deployed using Docker Compose on Ubuntu Server.
+The infrastructure is a multi-tier application running with Docker Compose on Ubuntu Server.
 
-It includes persistent storage, firewall security, automated database backup, scheduled operations, and technical documentation.
+It covers everything from itself to persistent storage, firewall security, automatic database backup, scheduled operations and technical documentation.
 
-These configurations help support application reliability, data protection, and easier system maintenance.
+These configurations can assist with the reliability of the application, data protection and system maintenance.
