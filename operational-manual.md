@@ -96,12 +96,6 @@ cat backups/backup.log
 
 ## 10. Cron
 
-**Open the Cron editor:**
-
-```bash
-crontab -e
-```
-
 **Schedule the backup to run daily at 2:00 AM:**
 
 ```bash
