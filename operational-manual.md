@@ -20,6 +20,7 @@ docker volume inspect lowdb_wordpress_data
 
 ---
 
+
 ## 8. Firewall Security
 
 **Reset UFW:**
@@ -40,25 +41,28 @@ sudo ufw default deny outgoing
 sudo ufw default allow outgoing
 ```
 
+**Allow SSH:**
+
+```bash
+sudo ufw allow 22/tcp
+```
+
+**Allow web application:**
+
+```bash
+sudo ufw allow 8080/tcp
+```
+
+**Enable firewall:**
+
+```bash
+sudo ufw --force enable
+```
+
 **Check firewall status:**
 
 ```bash
 sudo ufw status verbose
 ```
 
----
-
-## 9. Verification
-
-**List all Docker volumes:**
-
-```bash
-docker volume ls
-```
-
-**Check firewall status:**
-
-```bash
-sudo ufw status
-```
 
