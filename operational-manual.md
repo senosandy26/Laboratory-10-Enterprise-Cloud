@@ -287,19 +287,19 @@ Regular maintenance includes:
 
 ## 15. Recovery
 
-**If the containers stop, restart the application:**
+**If the containers stop:**
 
 ```bash
 docker compose up -d
 ```
 
-**If the server restarts, start Docker:**
+**If the server restarts:**
 
 ```bash
 sudo systemctl start docker
 ```
 
-**Start the application again:**
+**Then:**
 
 ```bash
 docker compose up -d
